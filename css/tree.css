@@ -1,0 +1,108 @@
+.css-treeview ul,
+.css-treeview li
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ 
+ 
+.css-treeview
+{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+ 
+ 
+.css-treeview span + ul
+{
+    margin: 0 0 0 22px;
+}
+/* 
+.css-treeview input:disabled + label
+{
+    cursor: default;
+    opacity: .6;
+}
+*/
+.css-treeview input
+{
+    display:block;
+    margin-top:2px;
+    float:right;
+}
+.css-treeview label
+{
+    display:block;
+    margin-left:5px;
+    float:right;
+}
+.css-treeview ul.show
+{
+    display: block;
+}
+ 
+.css-treeview ul
+{
+    display: none;
+}
+.css-treeview span
+{
+    display:inline-block;
+    padding:0 16px 0 0;
+    height:24px;
+}
+.css-treeview span:hover
+{
+	background-color:#f5f5f5;
+}
+.css-treeview span:not(.none)
+{
+    font-weight:bold;
+}
+ 
+.css-treeview span::before
+{
+    cursor: pointer;
+    background: url("../img/glyphicons-halflings.png") no-repeat;
+    display: inline-block;
+    height: 18px;
+}
+.css-treeview span::before
+{
+    content: "";
+    width: 16px;
+    vertical-align: middle;
+    background-position: 0px -96px;
+}
+.css-treeview span.expand::before
+{
+    background-position: -24px -96px;
+
+} 
+ 
+.css-treeview span.leaf::before
+{
+    background-position: 200px 0px;
+} 
+/* webkit adjacent element selector bugfix */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    .css-treeview
+    {
+        -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+    }
+ 
+    @-webkit-keyframes webkit-adjacent-element-selector-bugfix
+    {
+        from
+        {
+            padding: 0;
+        }
+        to
+        {
+            padding: 0;
+        }
+    }
+}

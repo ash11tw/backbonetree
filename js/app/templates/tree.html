@@ -1,0 +1,22 @@
+<% _.each(folders, function(folder) { %>
+<li>    
+	<% if(folder.children && folder.children.length) { %>
+		<span <% folder.expand?print('class="expand"'):'' %>>
+		<i class="icon-folder-close"></i>
+		<label class="checkbox">
+		<input type="checkbox" value="<%=folder.id %>" name="<%= folder.name %>" ><%= folder.title %></input>
+		</label>
+		</span>
+		<ul <% folder.expand?print('class="show"'):'' %>>
+		<%= templateFn({"folders": folder.children, "templateFn": templateFn}) %>
+		<% if(folder.children && folder.children.length) { %></ul><% } %>
+	<% }else{ %>
+		<span class="leaf"> 
+			<i class="icon-list"></i>
+			<label class="checkbox">
+			<input type="checkbox" value="<%=folder.id %>" name="<%= folder.name %>" ><%= folder.title %></input>
+			<label>
+		</span>
+	<% } %>
+</li>
+<% }) %>
